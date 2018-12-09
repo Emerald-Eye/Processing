@@ -1,66 +1,11 @@
 <html>
   <head>
-    <title>My Christmas Tree</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.js"></script>
-    <script type="text/processing" data-processing-target="processing-canvas">
-    ArrayList<Light> lights;
-
-void setup() {
-  size(500, 500);
-  lights = new ArrayList<Light>();
-  background(0, 100, 100);
-  drawTree();
-}
-
-void draw() {
-  if (mousePressed) {
-    colorMode(HSB);
-    stroke(random(10, 225), 255, random(100, 255));
-    strokeWeight(4);
-    line(mouseX, mouseY, mouseX + random(-10, 10), mouseY + random(-10, 10));
-  }
-  if (keyPressed) {
-    lights.add(new Light());
-  }
-  for (Light l : lights) {
-    l.show();
-  }
-}
-
-void drawTree() {
-  fill(0, 255, 0);
-  noStroke();
-  triangle(width / 2 - 50, 175, width / 2, 50, width / 2 + 50, 175);
-  triangle(width / 2 - 75, 250, width / 2, 125, width / 2 + 75, 250);
-  triangle(width / 2 - 100, 350, width / 2, 175, width / 2 + 100, 350);
-  fill(150, 69, 19);
-  rect(width / 2 - 25, 350, 50, 60);
-}
-
-class Light {
-  float x;
-  float y;
-  float hue;
-  boolean on;
-  
-  Light() {
-    x = mouseX;
-    y = mouseY;
-    hue = random(255);
-    on = false;
-  }
-  
-  void show() {
-    noStroke();
-    fill(hue, 255, 200);
-    ellipse(x, y, 10, 10);
-  }
-}
-    </script>
+    <title>Callum's Processing Project Portal</title>
   </head>
   <body>
-    <p>Click to put tinsel on the tree.</p>
-    <p>Press any key to put a light on where your mouse is.</p>
-    <canvas id="processing-canvas"></canvas>
+    <h2>Thank you for visiting my Processing portal.</h2>
+    <p>You can download Processing <a href="https://processing.org/download/">here.</a></p>
+    <p>Links</p>
+    <a href="xmas-tree.html">XMas/Christmas Tree</a>
   </body>
 </html>
