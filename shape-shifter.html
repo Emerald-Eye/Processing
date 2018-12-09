@@ -1,1 +1,40 @@
+<html>
+  <head>
+    <title>Shape Shifter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.js"></script>
+    <script type="text/processing" data-processing-target="processing-canvas">
+      void setup() {
+  size(1000, 750);
+  background(75);
+  
+}
 
+void draw() {
+  if (keyPressed) {
+    int x1 = mouseX - 25;
+    int y1 = mouseY - 25;
+    int x2 = mouseX;
+    int y2 = mouseY + 25;
+    int x3 = mouseX + 25;
+    int y3 = mouseY - 25;
+    triangle(x1, y1, x2, y2, x3, y3);
+  } else if (mousePressed) {
+    ellipse(mouseX, mouseY, 25, 25);
+  } else {
+    int c1X = mouseX - 10;
+    int c1Y = mouseY - 10;
+    int c2X = mouseX + 10;
+    int c2Y = mouseY + 10;
+    rect(c1X, c1Y, c2X, c2Y);
+  }
+}
+    </script>
+  </head>
+  <body>
+    <a href="index.html">Back</a>
+    <p>Click to draw a circle.</p>
+    <p>Press any key to draw a triangle.</p>
+    <p>Don't do anything to draw weird rectangles.</p>
+    <canvas id="processing-canvas"></canvas>
+  </body>
+</html>
